@@ -1,0 +1,7 @@
+------------Project Execution Steps--------------
+
+1. After extracting the project open it in Visual Studio Code.
+2. In command prompt,change the directory to backend by using 'cd backend' commamd.
+3. Execute the backend server by entering 'node server.js' command.
+4. After the successull execution of the backend server change the project directory.
+5. Run ng serve to run the project.
