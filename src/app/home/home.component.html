@@ -1,0 +1,231 @@
+<!--
+<div class="container">
+  <div class="row col-md-12 mt-4">
+    <h2>Product Table</h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Product Id</div>
+        <div class="col col-2">Product Name</div>
+        <div class="col col-3">Price</div>
+      </li>
+      <li class="table-row" *ngFor="let data of ProductData">
+        <div class="col col-1" data-label="Product Id">{{data.product_id}}</div>
+        <div class="col col-2" data-label="Product Name">{{data.name}}</div>
+        <div class="col col-3" data-label="Price">{{data.price}}</div>
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-12">
+          <div class="panel2-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel2 panel2-default">
+                  <div class="panel2-heading" role="tab" id="headingOne">
+                      <h4 class="panel2-title text-center">
+                          <a class="first" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Product Table
+                            <span> </span>
+                          </a>
+                      </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body">
+
+                        <div class="panel  col-md-12 mt-0 pt-0">
+                        <div *ngIf="ProductData" class="panel-body table-responsive">
+                          <table class="table">
+                            <thead class="table-head">
+                              <tr>
+                                <th>Product Id</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let data of ProductData">
+                                <td>{{data.product_id}}</td>
+                                <td>{{data.name}}</td>
+                                <td>{{data.price}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="panel2 panel2-default">
+                  <div class="panel2-heading" role="tab" id="headingTwo">
+                      <h4 class="panel2-title text-center">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Customer Preference
+                            <span> </span>
+                          </a>
+                      </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel2-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div class="panel-body">
+
+                        <div class="panel col-md-12 mt-0 pt-0">
+                          <div *ngIf="CustomerData" class="panel-body table-responsive">
+                            <table class="table">
+                              <thead class="table-head">
+                                <tr>
+                                  <th>Preference Id</th>
+                                  <th>Product Id</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let data of CustomerData">
+                                  <td>{{data.preference_id}}</td>
+                                  <td>{{data.product_id}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="panel2 panel2-default">
+                <div class="panel2-heading" role="tab" id="headingThree">
+                    <h4 class="panel2-title text-center">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                          Order Table
+                          <span> </span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel2-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+
+                      <div class="panel col-md-12 mt-0 pt-0">
+                        <div *ngIf="OrderData" class="panel-body table-responsive">
+                          <table class="table">
+                            <thead class="table-head">
+                              <tr>
+                                <th>Customer Id</th>
+                                <th>Preference Id</th>
+                                <th>Date</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let data of OrderData">
+                                <td>{{data.customer_id}}</td>
+                                <td>{{data.preference_id}}</td>
+                                <td>{{data.date}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grey-bg container-fluid mt-4">
+    <section id="stats-subtitle">
+      <div class="row">
+        <div class="col-12 mt-3 mb-1">
+          <h4 class="text-uppercase">summary Details</h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6 col-md-12">
+          <div class="card overflow-hidden">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-pencil primary font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body">
+                    <h6>Most Popular Product</h6>
+                    <h5>{{PopularProduct.most_popular_product}}</h5>
+                  </div>
+                  <div class="align-self-center">
+                    <h6>Popularity Count</h6>
+                    <h5>{{PopularProduct.popularity_count}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-6 col-md-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-heart danger font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body">
+                    <h6>Most Products Ordered Customer</h6>
+                    <h5>{{MostOrderCustomer.customer_id}}</h5>
+                  </div>
+                  <div class="align-self-center">
+                    <h5>{{MostOrderCustomer.customer_id}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6 col-md-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body cleartfix">
+                <div class="media align-items-stretch">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                  </div>
+                  <div class="media-body">
+                    <h6>Inexpensive Products Ordered Customer</h6>
+                    <h5>{{InexpensiveCustomer.customer_id}}</h5>
+                  </div>
+                  <div class="align-self-center">
+                    <h5>{{InexpensiveCustomer.customer_id}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="loading">
+  <div class="lds-default">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
